@@ -5,3 +5,4 @@ mvn versions:set -DnewVersion=$VERSION-SNAPSHOT
 find . -name "*.versionsBackup" -type f -delete
 git add pom.xml
 git commit -m "Update version"
+echo RELEASE STARTED!
