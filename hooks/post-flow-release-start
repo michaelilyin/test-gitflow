@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+VERSION=${1:1}
+mvn versions:set -DnewVersion=$VERSION-SNAPSHOT
+find . -name "*.versionsBackup" -type f -delete
+git add pom.xml
+git commit -m "Update version"

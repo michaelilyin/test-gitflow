@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+VERSION=${1:1}
+ORIGIN=$2
+BRANCH=$3
+echo after release branch $BRANCH
+mvn versions:set -DnewVersion=next-SNAPSHOT
+find . -name "*.versionsBackup" -type f -delete
+git add pom.xml
+git commit -m "Update version"
