@@ -4,7 +4,7 @@
 
   <groupId>gitflowtest</groupId>
   <artifactId>gitflowtest</artifactId>
-  <version>0.2</version>
+  <version>next-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>gitflowtest</name>
