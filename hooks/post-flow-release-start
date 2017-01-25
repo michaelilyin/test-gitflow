@@ -7,14 +7,14 @@ git checkout release/$VERSION
 mvn versions:set -DnewVersion=$VERSION-SNAPSHOT
 if [ $? -ne 0 ]; then
 	echo Can not udpate version for aggregator. Abort.
-	return 1
+	exit 1
 fi
 mvn versions:commit
 
-mvn versions:set -DnewVersion=$VERSION-SNAPSHOT -pl: parent-parent
+mvn versions:set -DnewVersion=$VERSION-SNAPSHOT -pl :parent-parent
 if [ $? -ne 0 ]; then
 	echo Can not udpate version for parent. Abort.
-	return 1
+	exit 1
 fi
 mvn versions:commit
 
