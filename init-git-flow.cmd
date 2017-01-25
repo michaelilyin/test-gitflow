@@ -11,9 +11,12 @@ if errorLevel 1 (
 )
 
 echo Configure gitflow paramters
+rem First init gitflow with default parameters
+git flow init -d
+
 rem Set main branch names:
 git config gitflow.branch.master master
-git config gitflow.branch.develop develop
+git config gitflow.branch.develop dev
 
 rem Set branch prefixes:
 git config gitflow.prefix.feature feature/
