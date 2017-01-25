@@ -10,13 +10,16 @@ if errorLevel 1 (
 	exit 1
 )
 
-echo Configure gitflow paramters
-rem First init gitflow with default parameters
-git flow init -d
+echo Check existing configuration
+git flow config
+if errorLevel 1 (
+	echo Git config does not initialized yet. First init gitflow with default parameters.
+	git flow init -d
+)
 
 rem Set main branch names:
 git config gitflow.branch.master master
-git config gitflow.branch.develop dev
+git config gitflow.branch.develop develop
 
 rem Set branch prefixes:
 git config gitflow.prefix.feature feature/
@@ -31,6 +34,9 @@ set CURRENT_DIR=%cd%
 set HOOKS_TARGET_DIR=%CURRENT_DIR%\.git\hooks
 set HOOKS_SOURCE_DIR=%CURRENT_DIR%\hooks
 git config gitflow.path.hooks %HOOKS_TARGET_DIR% 
+
+echo New configuration of gitflow
+git flow config
 
 echo Copy hooks
 rem Copy hooks
