@@ -15,3 +15,5 @@ if [ $? -ne 0 ]; then
 fi
 
 . "$HOOKS_DIR/modules/update_versions.sh" $VERSION
+
+exit 0
