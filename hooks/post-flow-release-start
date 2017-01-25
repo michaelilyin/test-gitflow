@@ -18,7 +18,7 @@ if [ $? -ne 0 ]; then
 fi
 mvn versions:commit
 
-sed -i -- 's/"version":".*"/"version":"$VERSION"/g' client/pacjage.json
+sed -i -- 's/"version":".*"/"version":"$VERSION"/g' client/package.json
 
 git add */pom.xml
 git add pom.xml
