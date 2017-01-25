@@ -18,5 +18,5 @@ if [ $? -ne 0 ]; then
 fi
 mvn versions:commit
 
-git add 'pom.xml'
+git add */**/pom.xml
 git commit -m "Update project version snapshot release version"
