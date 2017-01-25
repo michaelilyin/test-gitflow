@@ -4,9 +4,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>gitflowtest</groupId>
-    <artifactId>client-parent</artifactId>
+    <artifactId>gitflowtest</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <relativePath>../client-parent/pom.xml</relativePath>
   </parent>
   <groupId>gitflowtest</groupId>
   <artifactId>client</artifactId>
