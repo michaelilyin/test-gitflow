@@ -21,4 +21,4 @@ sed -i -- "s/\"tag\":\s*\".*\"/\"tag\":\"$VERSION_FOR_UPDATE\"/g" client/package
 git add */pom.xml
 git add pom.xml
 git add client/package.json
-git commit -m "Update project version to %VERSION_FOR_UPDATE"
+git commit -m "Update project version to $VERSION_FOR_UPDATE"
