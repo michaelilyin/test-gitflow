@@ -5,4 +5,4 @@ SCRIPT_PATH="$0"; while [ -h "$SCRIPT_PATH" ]; do SCRIPT_PATH=$(readlink "$SCRIP
 
 git checkout develop
 
-. "$HOOKS_PATH/modules/update_versions.sh next-SNAPSHOT"
+. "$HOOKS_DIR/modules/update_versions.sh next-SNAPSHOT"
