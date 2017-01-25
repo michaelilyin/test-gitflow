@@ -5,12 +5,12 @@
   <parent>
     <groupId>gitflowtest</groupId>
     <artifactId>parent</artifactId>
-    <version>2-SNAPSHOT</version>
+    <version>3-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <groupId>gitflowtest</groupId>
   <artifactId>impl</artifactId>
-  <version>2-SNAPSHOT</version>
+  <version>3-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>impl</name>
   <url>http://maven.apache.org</url>
@@ -27,7 +27,7 @@
     <dependency>
       <groupId>gitflowtest</groupId>
       <artifactId>api</artifactId>
-      <version>2-SNAPSHOT</version>
+      <version>3-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </project>
