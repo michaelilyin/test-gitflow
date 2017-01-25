@@ -18,5 +18,9 @@ if [ $? -ne 0 ]; then
 fi
 mvn versions:commit
 
-git add */**/pom.xml
+sed -i -- 's/"version":".*"/"version":"$VERSION"/g' client/pacjage.json
+
+git add */pom.xml
+git add pom.xml
+git add client/package.json
 git commit -m "Update project version snapshot release version"
