@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+VERSION=${1:1}
+
+git checkout release/%VERSION%
+
+mvn versions:set -DnewVersion=$VERSION
+find . -name "*.versionsBackup" -type f -delete
+
+git add 'pom.xml'
+git commit -m "Update project version to release version"
+ 
