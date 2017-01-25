@@ -2,19 +2,19 @@
 
 VERSION=${1:1}
 
-git checkout release/%VERSION%
+git checkout release/$VERSION
 
 mvn versions:set -DnewVersion=$VERSION-SNAPSHOT
 if [ $? -ne 0 ]; then
 	echo Can not udpate version for aggregator. Abort.
-	exit 1
+	return 1
 fi
 mvn versions:commit
 
 mvn versions:set -DnewVersion=$VERSION-SNAPSHOT -pl:parent-parent
 if [ $? -ne 0 ]; then
 	echo Can not udpate version for parent. Abort.
-	exit 1
+	return 1
 fi
 mvn versions:commit
 
