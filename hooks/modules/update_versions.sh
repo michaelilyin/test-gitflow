@@ -16,7 +16,7 @@ if [ $? -ne 0 ]; then
 fi
 mvn versions:commit
 
-VERSION_REGEX=[0-9][0-9]*(\.[0-9][0-9]*)?(\.[0-9][0-9]*)?
+VERSION_REGEX=[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*
 
 LEN=$(expr match $VERSION_FOR_UPDATE $VERSION_REGEX)
 if [ $LEN -gt 0 ]; then
