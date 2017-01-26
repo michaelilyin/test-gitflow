@@ -5,12 +5,12 @@
   <parent>
     <groupId>gitflowtest</groupId>
     <artifactId>client-parent</artifactId>
-    <version>next-SNAPSHOT</version>
+    <version>0.6</version>
     <relativePath>../client-parent/pom.xml</relativePath>
   </parent>
   <groupId>gitflowtest</groupId>
   <artifactId>client</artifactId>
-  <version>next-SNAPSHOT</version>
+  <version>0.6</version>
   <packaging>jar</packaging>
   <name>client</name>
   <url>http://maven.apache.org</url>

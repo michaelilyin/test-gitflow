@@ -7,4 +7,6 @@ git checkout develop
 
 . "$HOOKS_DIR/modules/update_versions.sh" next-SNAPSHOT
 
+. "$HOOKS_DIR/modules/push_locals.sh"
+
 exit 0
