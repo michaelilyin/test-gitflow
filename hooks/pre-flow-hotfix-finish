@@ -5,8 +5,15 @@ VERSION=${1:1}
 SCRIPT_PATH="$0"; while [ -h "$SCRIPT_PATH" ]; do SCRIPT_PATH=$(readlink "$SCRIPT_PATH"); done
 . "$(dirname $SCRIPT_PATH)/modules/functions.sh"
 
-git checkout release/$VERSION
+git checkout hotfix/$VERSION
 
-. "$HOOKS_DIR/modules/update_versions.sh" $VERSION-SNAPSHOT
+. "$HOOKS_DIR/modules/update_versions.sh" $VERSION
+
+mvn clean verify
+
+if [ $? -ne 0 ]; then
+	echo Build failed. Abort.
+	exit 1
+fi
 
 exit 0
