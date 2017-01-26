@@ -16,4 +16,10 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
+git checkout develop
+
+. "$HOOKS_DIR/modules/update_versions.sh" $VERSION
+
+git checkout release/$VERSION
+
 exit 0
