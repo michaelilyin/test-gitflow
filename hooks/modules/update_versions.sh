@@ -22,4 +22,6 @@ git add */pom.xml
 git add pom.xml
 git add client/package.json
 git commit -m "Update project version to $VERSION_FOR_UPDATE"
+
+#return zero besides if we continue release there is nothing for commit will be and git commit returns 1
 exit 0
