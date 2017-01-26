@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>gitflowtest</groupId>
-  <artifactId>parent-parent</artifactId>
+  <artifactId>main-parent</artifactId>
   <packaging>pom</packaging>
   <version>next-SNAPSHOT</version>
   <name>parent-parent</name>
