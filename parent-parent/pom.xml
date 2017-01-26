@@ -5,7 +5,7 @@
   <groupId>gitflowtest</groupId>
   <artifactId>parent-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.4</version>
+  <version>0.4.1</version>
   <name>parent-parent</name>
   <url>http://maven.apache.org</url>
   <properties>
