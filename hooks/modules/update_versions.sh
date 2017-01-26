@@ -16,6 +16,14 @@ if [ $? -ne 0 ]; then
 fi
 mvn versions:commit
 
+VERSION_REGEX=[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*
+
+LEN=$(expr match $VERSION_FOR_UPDATE $VERSION_REGEX)
+if [ $LEN -gt 0 ]; then
+	VERSION_FOR_NPM=$(expr substr $VERSION_FOR_UPDATE 1 $LEN)
+	sed -i -- "s/\"version\":\s*\".*\"/\"version\":\"$VERSION_FOR_NPM\"/g" client/package.json
+fi
+
 sed -i -- "s/\"tag\":\s*\".*\"/\"tag\":\"$VERSION_FOR_UPDATE\"/g" client/package.json
 
 git add */pom.xml
