@@ -32,7 +32,7 @@ git config gitflow.prefix.versiontag v
 rem Set hooks path for project:
 set CURRENT_DIR=%cd%
 set HOOKS_TARGET_DIR=%CURRENT_DIR%\.git\hooks
-set HOOKS_SOURCE_DIR=%CURRENT_DIR%\hooks
+set HOOKS_SOURCE_DIR=%CURRENT_DIR%\gitflow-hooks
 git config gitflow.path.hooks %HOOKS_TARGET_DIR% 
 
 echo New configuration of gitflow
