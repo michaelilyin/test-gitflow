@@ -9,4 +9,6 @@ git checkout develop
 
 . "$HOOKS_DIR/modules/update_versions.sh" next-SNAPSHOT
 
+git checkout release/$VERSION
+
 exit 0
