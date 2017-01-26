@@ -5,12 +5,11 @@
   <parent>
     <groupId>gitflowtest</groupId>
     <artifactId>parent</artifactId>
-    <version>0.7.0</version>
+    <version>0.8.0</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <groupId>gitflowtest</groupId>
   <artifactId>api</artifactId>
-  <version>0.7.0</version>
   <packaging>jar</packaging>
   <name>api</name>
   <url>http://maven.apache.org</url>

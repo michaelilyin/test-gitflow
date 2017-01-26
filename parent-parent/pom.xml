@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>gitflowtest</groupId>
-  <artifactId>parent-parent</artifactId>
+  <artifactId>main-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.7.0</version>
+  <version>0.8.0</version>
   <name>parent-parent</name>
   <url>http://maven.apache.org</url>
   <properties>

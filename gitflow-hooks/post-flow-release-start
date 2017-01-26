@@ -5,8 +5,10 @@ VERSION=${1:1}
 SCRIPT_PATH="$0"; while [ -h "$SCRIPT_PATH" ]; do SCRIPT_PATH=$(readlink "$SCRIPT_PATH"); done
 . "$(dirname $SCRIPT_PATH)/modules/functions.sh"
 
-git checkout release/$VERSION
+git checkout develop
 
-. "$HOOKS_DIR/modules/update_versions.sh" $VERSION-SNAPSHOT
+. "$HOOKS_DIR/modules/update_versions.sh" next-SNAPSHOT
+
+git checkout release/$VERSION
 
 exit 0
