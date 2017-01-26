@@ -16,13 +16,18 @@ if [ $? -ne 0 ]; then
 fi
 mvn versions:commit
 
+echo Update client versioins
 VERSION_REGEX=[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*
 
 LEN=$(expr match $VERSION_FOR_UPDATE $VERSION_REGEX)
+echo Update version directly, LEN, $VERSION_FOR_UPDATE, $VERSION_REGEX
 if [ $LEN -gt 0 ]; then
+	echo TRUE
 	VERSIONS_FOR_NPM=$(expr substr $VERSION_FOR_UPDATE, 1, $LEN)	
 	sed -i -- "s/\"version\":\s*\".*\"/\"version\":\"$VERSION_FOR_UPDATE\"/g" client/package.json
 fi
+
+echo Update tag
 
 sed -i -- "s/\"tag\":\s*\".*\"/\"tag\":\"$VERSION_FOR_UPDATE\"/g" client/package.json
 
