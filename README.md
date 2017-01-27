@@ -1,1 +1,1 @@
-ECHO is on.
+Some development changes for new version.
