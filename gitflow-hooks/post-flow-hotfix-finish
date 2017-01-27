@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
+#
+# Hotfix release post processing.
+#
+
 SCRIPT_PATH="$0"; while [ -h "$SCRIPT_PATH" ]; do SCRIPT_PATH=$(readlink "$SCRIPT_PATH"); done
 . "$(dirname $SCRIPT_PATH)/modules/functions.sh"
 
+# Checkout to develop branch and return project version for current project version.
 git checkout develop
-
 . "$HOOKS_DIR/modules/update_versions.sh" next-SNAPSHOT
 
+# Push all local changes into repository. If it is not required remove the following line.
 . "$HOOKS_DIR/modules/push_locals.sh"
 
 exit 0

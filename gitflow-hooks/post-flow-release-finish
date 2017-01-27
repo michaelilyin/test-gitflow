@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
+#
+# Release post processing.
+#
+
 SCRIPT_PATH="$0"; while [ -h "$SCRIPT_PATH" ]; do SCRIPT_PATH=$(readlink "$SCRIPT_PATH"); done
 . "$(dirname $SCRIPT_PATH)/modules/functions.sh"
 
+# Checkout to develop branch and return version to current development version.
 git checkout develop
-
 . "$HOOKS_DIR/modules/update_versions.sh" next-SNAPSHOT
 
+# Push local changes into origin repository. If this is not required remove the following line.
 . "$HOOKS_DIR/modules/push_locals.sh"
 
 exit 0

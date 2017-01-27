@@ -1,25 +1,33 @@
 #!/usr/bin/env bash
 
+#
+# Prepare hotfix for release.
+#
+
 VERSION=${1:1}
 
 SCRIPT_PATH="$0"; while [ -h "$SCRIPT_PATH" ]; do SCRIPT_PATH=$(readlink "$SCRIPT_PATH"); done
 . "$(dirname $SCRIPT_PATH)/modules/functions.sh"
 
+# Checkout to hotfix branch and update project version to non-snapshot versions.
 git checkout hotfix/$VERSION
-
 . "$HOOKS_DIR/modules/update_versions.sh" $VERSION
 
+# Build the project.
 mvn clean verify
 
 if [ $? -ne 0 ]; then
+    # Check build result. If build failed break down gitflow process.
 	echo Build failed. Abort.
 	exit 1
 fi
 
+# Checkout to develop branch and udpate version for current hotfix version.
+# It is required to avoid merge conflicts in a future.
 git checkout develop
-
 . "$HOOKS_DIR/modules/update_versions.sh" $VERSION
 
+# Checkout back to hotfix branch.
 git checkout hotfix/$VERSION
 
 exit 0
