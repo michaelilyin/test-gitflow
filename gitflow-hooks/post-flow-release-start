@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
+#
+# Post process release branch creation.
+#
+
 VERSION=${1:1}
 
 SCRIPT_PATH="$0"; while [ -h "$SCRIPT_PATH" ]; do SCRIPT_PATH=$(readlink "$SCRIPT_PATH"); done
 . "$(dirname $SCRIPT_PATH)/modules/functions.sh"
 
+# Checkout to develop and return project version to develop version.
 git checkout develop
-
 . "$HOOKS_DIR/modules/update_versions.sh" next-SNAPSHOT
 
+# Checkout back to release branch.
 git checkout release/$VERSION
 
 exit 0
