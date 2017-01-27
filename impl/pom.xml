@@ -5,7 +5,7 @@
   <parent>
     <groupId>gitflowtest</groupId>
     <artifactId>parent</artifactId>
-    <version>next-SNAPSHOT</version>
+    <version>0.9.0</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <groupId>gitflowtest</groupId>
@@ -26,7 +26,7 @@
     <dependency>
       <groupId>gitflowtest</groupId>
       <artifactId>api</artifactId>
-      <version>next-SNAPSHOT</version>
+      <version>0.9.0</version>
     </dependency>
   </dependencies>
 </project>
