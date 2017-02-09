@@ -5,7 +5,7 @@
   <parent>
     <groupId>gitflowtest</groupId>
     <artifactId>main-parent</artifactId>
-    <version>0.9.0</version>
+    <version>0.10.0.0</version>
     <relativePath>parent-parent/pom.xml</relativePath>
   </parent>
 
